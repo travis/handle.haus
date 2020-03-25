@@ -1,0 +1,6 @@
+{
+  "version": 2,
+  "routes": [
+    { "src": "/handles/(.*)", "dest": "api/handles/[handle]?handle=$1" }
+  ]
+}
