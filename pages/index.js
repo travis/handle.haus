@@ -19,7 +19,7 @@ const Home = () => (
 
     <footer>
       <a
-        href="https://github.com/travis/handle.haus"
+        href="https://github.com/travis/handle.haus/blob/master/handles.csv"
         target="_blank"
         rel="noopener noreferrer"
       >

@@ -1,6 +1,7 @@
 {
   "version": 2,
   "routes": [
-    { "src": "/handles/(.*)", "dest": "api/handles/[handle]?handle=$1" }
+    { "src": "/handles/(.*)", "dest": "api/handles/[handle]?handle=$1" },
+    { "src": "/webids/(.*)", "dest": "api/handles/[webid]?webid=$1" }
   ]
 }

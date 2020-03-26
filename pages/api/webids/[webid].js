@@ -14,7 +14,8 @@ export default async function handleRequest(req, res) {
 @prefix foaf: <http://xmlns.com/foaf/0.1/>.
 
 <https://handle.haus/webids/${encodedWebId}> owl:sameAs <${webId}> .
-<https://handle.haus/webids/${encodedWebId}> foaf:nick "${handle}".
+<https://handle.haus/webids/${encodedWebId}> owl:sameAs <https://handle.haus/handles/${handle}> .
+<https://handle.haus/webids/${encodedWebId}> foaf:nick "${handle}" .
 `)
   } else {
     res.statusCode = 404
