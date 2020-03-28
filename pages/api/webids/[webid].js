@@ -10,12 +10,15 @@ export default async function handleRequest(req, res) {
     res.statusCode = 200
     res.setHeader('Content-Type', 'text/turtle')
     res.setHeader('Cache-Control', 'max-age=60, s-maxage=86400, public')
-    res.end(`@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+    res.end(`@prefix : <#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix hh: <https://handle.haus/ontology#> .
 
-<https://handle.haus/webids/${encodedWebId}> owl:sameAs <${webId}> .
-<https://handle.haus/webids/${encodedWebId}> owl:sameAs <https://handle.haus/handles/${handle}> .
-<https://handle.haus/webids/${encodedWebId}> foaf:nick "${handle}" .
+:Person owl:sameAs <${webId}> ;
+  owl:sameAs <https://handle.haus/handles/${handle}> ;
+  hh:webId <${webId}> ;
+  foaf:nick "${handle}" .
 `)
   } else {
     res.statusCode = 404
